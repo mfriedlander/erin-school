@@ -76,6 +76,39 @@ namespace Assignment2
                 }
                 Console.WriteLine();
             }
+
+            #region Alternative Solution
+            //int start = -4; // starting temperature
+            //int end = 212; // ending temperature
+            //int skip = 4; // how many degrees we should skip between steps
+            //int cols = 3; // number of columns to print
+            //int rows = ((end - start)/skip)/cols; // number of rows to print
+
+            //for (int i = 0; i <= rows; i++)
+            //{
+            //    for (int j = 0; j < cols; j++)
+            //    {
+            //        // row number times total cols + col number, skip every 4, start at -4
+            //        int index = (i * cols + j) * skip + start;
+
+            //        // Stop early if we hit the end value (leave empty columns)
+            //        if (index > end)
+            //        {
+            //            break;
+            //        }
+            //        else
+            //        {
+            //            celsiusValue = FahrenheitToCelsius(index);
+
+            //            // To get the equals sign in the middle we pad the first term left and the whole string right, 
+            //            // otherwise (if we only pad the second term right) the "°C" will be after the padding.
+            //            convertedTemperatures = string.Format("{0,7:0.00}°F = " + "{1:0.00}°C", index, celsiusValue).PadRight(25);
+            //            Console.Write(convertedTemperatures);
+            //        }
+            //    }
+            //    Console.WriteLine();
+            //}
+            #endregion 
         }
 
         /// <summary>
