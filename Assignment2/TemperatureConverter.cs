@@ -49,6 +49,9 @@ namespace Assignment2
             double celsiusValue;
             string convertedTemperatures;
 
+            #region Print in 1 Column
+            // This code can be uncommented if you want to print out the results in one column
+
             //for (int i = 0; i <= 212; i += 4)
             //{
             //    celsiusValue = FahrenheitToCelsius(i);
@@ -56,58 +59,38 @@ namespace Assignment2
             //    Console.WriteLine(convertedTemperatures);
             //}
             //Console.WriteLine();
+            #endregion
 
+            #region Print in 3 Columns
+            int start = 0; // starting temperature
+            int end = 212; // ending temperature
+            int skip = 4; // how many degrees we should skip between steps
+            int cols = 3; // number of columns to print
+            int rows = ((end - start) / skip) / cols; // number of rows to print
 
-            for (int i = -4; i <= 212; i++)
+            for (int i = 0; i <= rows; i++)
             {
-                if (i % 2 == 0)
+                for (int j = 0; j < cols; j++)
                 {
+                    // row number times total cols + col number, skip every 4, start at 0
+                    int index = (i * cols + j) * skip + start;
 
-                }
-                else
-                {
-                    i--;
-                }
-                for (int j = 0; j <= 2; j++)
-                {
-                    celsiusValue = FahrenheitToCelsius(i);
-                    convertedTemperatures = string.Format("{0,10:0.00}°F = " + "{1:0.00}°C", i+=4, celsiusValue);
-                    Console.Write(convertedTemperatures);
+                    // Stop early if we hit the end value (leave empty columns)
+                    if (index > end)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        celsiusValue = FahrenheitToCelsius(index);
+
+                        //format the response to right - align string on each side of the equal sign
+                        convertedTemperatures = string.Format("{0,10:0.00}°F = " + "{1,6:0.00}°C", index, celsiusValue);
+                        Console.Write(convertedTemperatures);
+                    }
                 }
                 Console.WriteLine();
             }
-
-            #region Alternative Solution
-            //int start = -4; // starting temperature
-            //int end = 212; // ending temperature
-            //int skip = 4; // how many degrees we should skip between steps
-            //int cols = 3; // number of columns to print
-            //int rows = ((end - start)/skip)/cols; // number of rows to print
-
-            //for (int i = 0; i <= rows; i++)
-            //{
-            //    for (int j = 0; j < cols; j++)
-            //    {
-            //        // row number times total cols + col number, skip every 4, start at -4
-            //        int index = (i * cols + j) * skip + start;
-
-            //        // Stop early if we hit the end value (leave empty columns)
-            //        if (index > end)
-            //        {
-            //            break;
-            //        }
-            //        else
-            //        {
-            //            celsiusValue = FahrenheitToCelsius(index);
-
-            //            // To get the equals sign in the middle we pad the first term left and the whole string right, 
-            //            // otherwise (if we only pad the second term right) the "°C" will be after the padding.
-            //            convertedTemperatures = string.Format("{0,7:0.00}°F = " + "{1:0.00}°C", index, celsiusValue).PadRight(25);
-            //            Console.Write(convertedTemperatures);
-            //        }
-            //    }
-            //    Console.WriteLine();
-            //}
             #endregion 
         }
 
@@ -130,13 +113,49 @@ namespace Assignment2
             double fahrenheitValue;
             string convertedTemperatures;
 
-            for (int i = 0; i <= 100; i += 5)
+            #region Print in 1 Column
+            // This code can be uncommented if you want to print out the results in one column
+
+            //for (int i = 0; i <= 100; i += 5)
+            //{
+            //    fahrenheitValue = CelsiusToFahrenheit(i);
+            //    convertedTemperatures = string.Format("{0:0.00}°C = " + "{1:0.00}°F", i, fahrenheitValue);
+            //    Console.WriteLine(convertedTemperatures);
+            //}
+            //Console.WriteLine();
+            #endregion
+
+            #region Print in 3 Columns
+            int start = 0; // starting temperature
+            int end = 100; // ending temperature
+            int skip = 5; // how many degrees we should skip between steps
+            int cols = 3; // number of columns to print
+            int rows = ((end - start) / skip) / cols; // number of rows to print
+
+            for (int i = 0; i <= rows; i++)
             {
-                fahrenheitValue = CelsiusToFahrenheit(i);
-                convertedTemperatures = string.Format("{0:0.00}°C = " + "{1:0.00}°F", i, fahrenheitValue);
-                Console.WriteLine(convertedTemperatures);
+                for (int j = 0; j < cols; j++)
+                {
+                    // row number times total cols + col number, skip every 5, start at 0
+                    int index = (i * cols + j) * skip + start;
+
+                    // Stop early if we hit the end value (leave empty columns)
+                    if (index > end)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        fahrenheitValue = CelsiusToFahrenheit(index);
+
+                        // format the response to right-align string on each side of the equal sign
+                        convertedTemperatures = string.Format("{0,10:0.00}°C = " + "{1,6:0.00}°F", index, fahrenheitValue);
+                        Console.Write(convertedTemperatures);
+                    }
+                }
+                Console.WriteLine();
             }
-            Console.WriteLine();
+            #endregion
         }
 
         /// <summary>
