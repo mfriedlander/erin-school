@@ -67,27 +67,28 @@ namespace Assignment2
             int skip = 4; // how many degrees we should skip between steps
             int cols = 3; // number of columns to print
             int rows = ((end - start) / skip) / cols; // number of rows to print
+            int count = 0;
 
             for (int i = 0; i <= rows; i++)
             {
                 for (int j = 0; j < cols; j++)
                 {
-                    // row number times total cols + col number, skip every 4, start at 0
-                    int index = (i * cols + j) * skip + start;
-
                     // Stop early if we hit the end value (leave empty columns)
-                    if (index > end)
+                    if (count > end)
                     {
                         break;
                     }
                     else
                     {
-                        celsiusValue = FahrenheitToCelsius(index);
+                        celsiusValue = FahrenheitToCelsius(count);
 
                         //format the response to right - align string on each side of the equal sign
-                        convertedTemperatures = string.Format("{0,10:0.00}°F = " + "{1,6:0.00}°C", index, celsiusValue);
+                        convertedTemperatures = string.Format("{0,10:0.00}°F = " + "{1,6:0.00}°C", count, celsiusValue);
                         Console.Write(convertedTemperatures);
                     }
+
+                    // skip every 4, start at 0
+                    count += skip;
                 }
                 Console.WriteLine();
             }
@@ -131,27 +132,27 @@ namespace Assignment2
             int skip = 5; // how many degrees we should skip between steps
             int cols = 3; // number of columns to print
             int rows = ((end - start) / skip) / cols; // number of rows to print
+            int count = 0;
 
             for (int i = 0; i <= rows; i++)
             {
                 for (int j = 0; j < cols; j++)
                 {
-                    // row number times total cols + col number, skip every 5, start at 0
-                    int index = (i * cols + j) * skip + start;
-
                     // Stop early if we hit the end value (leave empty columns)
-                    if (index > end)
+                    if (count > end)
                     {
                         break;
                     }
                     else
                     {
-                        fahrenheitValue = CelsiusToFahrenheit(index);
+                        fahrenheitValue = CelsiusToFahrenheit(count);
 
                         // format the response to right-align string on each side of the equal sign
-                        convertedTemperatures = string.Format("{0,10:0.00}°C = " + "{1,6:0.00}°F", index, fahrenheitValue);
+                        convertedTemperatures = string.Format("{0,10:0.00}°C = " + "{1,6:0.00}°F", count, fahrenheitValue);
                         Console.Write(convertedTemperatures);
                     }
+                    // skip every 5, start at 0
+                    count += skip;
                 }
                 Console.WriteLine();
             }
