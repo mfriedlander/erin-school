@@ -1,0 +1,9 @@
+C:\UCSD\Assignment3\Assignment3\bin\Debug\Assignment3.exe.config
+C:\UCSD\Assignment3\Assignment3\bin\Debug\Assignment3.exe
+C:\UCSD\Assignment3\Assignment3\bin\Debug\Assignment3.pdb
+C:\UCSD\Assignment3\Assignment3\obj\Debug\Assignment3.csprojResolveAssemblyReference.cache
+C:\UCSD\Assignment3\Assignment3\obj\Debug\Assignment3.exe
+C:\UCSD\Assignment3\Assignment3\obj\Debug\Assignment3.pdb
+C:\Users\erinm\Source\Repos\erin-school\Assignment3\bin\Debug\Assignment3.exe.config
+C:\Users\erinm\Source\Repos\erin-school\Assignment3\obj\Debug\Assignment3.exe
+C:\Users\erinm\Source\Repos\erin-school\Assignment3\obj\Debug\Assignment3.pdb
