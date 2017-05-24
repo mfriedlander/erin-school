@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assignment3
 {
-    enum TransactionTypes
+    public enum TransactionTypes
     {
         Deposit,
         Withdrawal
