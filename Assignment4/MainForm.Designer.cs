@@ -33,24 +33,25 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.CalculateButton = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.metricRadioButton = new System.Windows.Forms.RadioButton();
+            this.americanRadioButton = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ResultsGroup = new System.Windows.Forms.GroupBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.normalWeightLabel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.bmiResultsLabel = new System.Windows.Forms.Label();
+            this.weightCategoryResultsLabel = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.heightTextbox = new System.Windows.Forms.TextBox();
+            this.weightTextbox = new System.Windows.Forms.TextBox();
+            this.inchesTextbox = new System.Windows.Forms.TextBox();
+            this.feetLabel = new System.Windows.Forms.Label();
+            this.inchesLabel = new System.Windows.Forms.Label();
             this.NameTextbox = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.heightLabel = new System.Windows.Forms.Label();
+            this.weightLabel = new System.Windows.Forms.Label();
+            this.infoLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.ResultsGroup.SuspendLayout();
             this.SuspendLayout();
@@ -59,10 +60,11 @@
             // 
             this.name.AutoSize = true;
             this.name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.name.Location = new System.Drawing.Point(63, 115);
+            this.name.Location = new System.Drawing.Point(24, 48);
+            this.name.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.name.Name = "name";
             this.name.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.name.Size = new System.Drawing.Size(221, 46);
+            this.name.Size = new System.Drawing.Size(89, 20);
             this.name.TabIndex = 0;
             this.name.Text = "Your Name";
             // 
@@ -70,9 +72,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label1.Location = new System.Drawing.Point(55, 200);
+            this.label1.Location = new System.Drawing.Point(21, 84);
+            this.label1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 46);
+            this.label1.Size = new System.Drawing.Size(56, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Height";
             // 
@@ -80,9 +83,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label2.Location = new System.Drawing.Point(55, 285);
+            this.label2.Location = new System.Drawing.Point(21, 120);
+            this.label2.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(144, 46);
+            this.label2.Size = new System.Drawing.Size(59, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Weight";
             // 
@@ -90,124 +94,139 @@
             // 
             this.CalculateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.CalculateButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.CalculateButton.Location = new System.Drawing.Point(579, 472);
+            this.CalculateButton.Location = new System.Drawing.Point(217, 198);
+            this.CalculateButton.Margin = new System.Windows.Forms.Padding(1);
             this.CalculateButton.Name = "CalculateButton";
-            this.CalculateButton.Size = new System.Drawing.Size(486, 103);
+            this.CalculateButton.Size = new System.Drawing.Size(182, 43);
             this.CalculateButton.TabIndex = 3;
             this.CalculateButton.Text = "Calculate";
             this.CalculateButton.UseVisualStyleBackColor = true;
             this.CalculateButton.Click += new System.EventHandler(this.CalculateButton_Click);
             // 
-            // radioButton1
+            // metricRadioButton
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.radioButton1.Location = new System.Drawing.Point(56, 80);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(392, 50);
-            this.radioButton1.TabIndex = 4;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Metric Unit (kg cm)";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.metricRadioButton.AutoSize = true;
+            this.metricRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.metricRadioButton.Location = new System.Drawing.Point(21, 68);
+            this.metricRadioButton.Margin = new System.Windows.Forms.Padding(1);
+            this.metricRadioButton.Name = "metricRadioButton";
+            this.metricRadioButton.Size = new System.Drawing.Size(163, 24);
+            this.metricRadioButton.TabIndex = 4;
+            this.metricRadioButton.TabStop = true;
+            this.metricRadioButton.Text = "Metric Unit (cm, kg)";
+            this.metricRadioButton.UseVisualStyleBackColor = true;
+            this.metricRadioButton.CheckedChanged += new System.EventHandler(this.metricRadioButton_CheckedChanged);
             // 
-            // radioButton2
+            // americanRadioButton
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Checked = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.radioButton2.Location = new System.Drawing.Point(56, 177);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(327, 50);
-            this.radioButton2.TabIndex = 5;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "US Unit (ft, lbs)";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.americanRadioButton.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.americanRadioButton.AutoSize = true;
+            this.americanRadioButton.Checked = true;
+            this.americanRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.americanRadioButton.Location = new System.Drawing.Point(21, 33);
+            this.americanRadioButton.Margin = new System.Windows.Forms.Padding(1);
+            this.americanRadioButton.Name = "americanRadioButton";
+            this.americanRadioButton.Size = new System.Drawing.Size(135, 24);
+            this.americanRadioButton.TabIndex = 5;
+            this.americanRadioButton.TabStop = true;
+            this.americanRadioButton.Text = "US Unit (ft, lbs)";
+            this.americanRadioButton.UseVisualStyleBackColor = true;
+            this.americanRadioButton.CheckedChanged += new System.EventHandler(this.americanRadioButton_CheckedChanged);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.americanRadioButton);
+            this.groupBox1.Controls.Add(this.metricRadioButton);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.groupBox1.Location = new System.Drawing.Point(1009, 104);
+            this.groupBox1.Location = new System.Drawing.Point(378, 44);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(1);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(485, 280);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(1);
+            this.groupBox1.Size = new System.Drawing.Size(182, 117);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Unit";
             // 
             // ResultsGroup
             // 
-            this.ResultsGroup.Controls.Add(this.label10);
+            this.ResultsGroup.Controls.Add(this.normalWeightLabel);
             this.ResultsGroup.Controls.Add(this.label7);
-            this.ResultsGroup.Controls.Add(this.label6);
-            this.ResultsGroup.Controls.Add(this.label5);
+            this.ResultsGroup.Controls.Add(this.bmiResultsLabel);
+            this.ResultsGroup.Controls.Add(this.weightCategoryResultsLabel);
             this.ResultsGroup.Controls.Add(this.label4);
             this.ResultsGroup.Controls.Add(this.label3);
             this.ResultsGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.ResultsGroup.Location = new System.Drawing.Point(88, 670);
+            this.ResultsGroup.Location = new System.Drawing.Point(33, 281);
+            this.ResultsGroup.Margin = new System.Windows.Forms.Padding(1);
             this.ResultsGroup.Name = "ResultsGroup";
-            this.ResultsGroup.Size = new System.Drawing.Size(1478, 565);
+            this.ResultsGroup.Padding = new System.Windows.Forms.Padding(1);
+            this.ResultsGroup.Size = new System.Drawing.Size(554, 237);
             this.ResultsGroup.TabIndex = 7;
             this.ResultsGroup.TabStop = false;
-            this.ResultsGroup.Text = "Results for @Name";
+            this.ResultsGroup.Text = "Your Results";
             this.ResultsGroup.Visible = false;
             // 
-            // label10
+            // normalWeightLabel
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label10.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label10.Location = new System.Drawing.Point(245, 463);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(1013, 39);
-            this.label10.TabIndex = 5;
-            this.label10.Text = "Normal weight should be between @lowWeight and @highWeight";
+            this.normalWeightLabel.AutoSize = true;
+            this.normalWeightLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.normalWeightLabel.ForeColor = System.Drawing.Color.DarkGreen;
+            this.normalWeightLabel.Location = new System.Drawing.Point(92, 194);
+            this.normalWeightLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.normalWeightLabel.Name = "normalWeightLabel";
+            this.normalWeightLabel.Size = new System.Drawing.Size(419, 17);
+            this.normalWeightLabel.TabIndex = 5;
+            this.normalWeightLabel.Text = "Normal weight should be between @lowWeight and @highWeight";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label7.Location = new System.Drawing.Point(699, 325);
+            this.label7.Location = new System.Drawing.Point(262, 136);
+            this.label7.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(684, 46);
+            this.label7.Size = new System.Drawing.Size(273, 20);
             this.label7.TabIndex = 4;
             this.label7.Text = "Normal BMI is between 18.5 and 24.9";
             // 
-            // label6
+            // bmiResultsLabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label6.Location = new System.Drawing.Point(707, 110);
-            this.label6.MinimumSize = new System.Drawing.Size(699, 60);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(699, 60);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "label6";
+            this.bmiResultsLabel.AutoSize = true;
+            this.bmiResultsLabel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.bmiResultsLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bmiResultsLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bmiResultsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.bmiResultsLabel.Location = new System.Drawing.Point(265, 46);
+            this.bmiResultsLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.bmiResultsLabel.MinimumSize = new System.Drawing.Size(263, 26);
+            this.bmiResultsLabel.Name = "bmiResultsLabel";
+            this.bmiResultsLabel.Size = new System.Drawing.Size(263, 26);
+            this.bmiResultsLabel.TabIndex = 3;
+            this.bmiResultsLabel.Text = "N/A";
             // 
-            // label5
+            // weightCategoryResultsLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label5.Location = new System.Drawing.Point(707, 216);
-            this.label5.MinimumSize = new System.Drawing.Size(699, 60);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(699, 60);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "label5";
+            this.weightCategoryResultsLabel.AutoSize = true;
+            this.weightCategoryResultsLabel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.weightCategoryResultsLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.weightCategoryResultsLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.weightCategoryResultsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.weightCategoryResultsLabel.Location = new System.Drawing.Point(265, 91);
+            this.weightCategoryResultsLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.weightCategoryResultsLabel.MinimumSize = new System.Drawing.Size(263, 26);
+            this.weightCategoryResultsLabel.Name = "weightCategoryResultsLabel";
+            this.weightCategoryResultsLabel.Size = new System.Drawing.Size(263, 26);
+            this.weightCategoryResultsLabel.TabIndex = 2;
+            this.weightCategoryResultsLabel.Text = "N/A";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label4.Location = new System.Drawing.Point(97, 230);
+            this.label4.Location = new System.Drawing.Point(36, 96);
+            this.label4.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(317, 46);
+            this.label4.Size = new System.Drawing.Size(127, 20);
             this.label4.TabIndex = 1;
             this.label4.Text = "Weight Category";
             // 
@@ -215,99 +234,123 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label3.Location = new System.Drawing.Point(97, 126);
+            this.label3.Location = new System.Drawing.Point(36, 53);
+            this.label3.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(185, 46);
+            this.label3.Size = new System.Drawing.Size(76, 20);
             this.label3.TabIndex = 0;
             this.label3.Text = "Your BMI";
             // 
-            // textBox1
+            // heightTextbox
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBox1.Location = new System.Drawing.Point(340, 193);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(169, 53);
-            this.textBox1.TabIndex = 8;
+            this.heightTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.heightTextbox.Location = new System.Drawing.Point(128, 81);
+            this.heightTextbox.Margin = new System.Windows.Forms.Padding(1);
+            this.heightTextbox.Name = "heightTextbox";
+            this.heightTextbox.Size = new System.Drawing.Size(66, 26);
+            this.heightTextbox.TabIndex = 8;
             // 
-            // textBox2
+            // weightTextbox
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBox2.Location = new System.Drawing.Point(340, 285);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(169, 53);
-            this.textBox2.TabIndex = 9;
+            this.weightTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.weightTextbox.Location = new System.Drawing.Point(128, 120);
+            this.weightTextbox.Margin = new System.Windows.Forms.Padding(1);
+            this.weightTextbox.Name = "weightTextbox";
+            this.weightTextbox.Size = new System.Drawing.Size(66, 26);
+            this.weightTextbox.TabIndex = 9;
             // 
-            // textBox3
+            // inchesTextbox
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBox3.Location = new System.Drawing.Point(644, 193);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(169, 53);
-            this.textBox3.TabIndex = 10;
+            this.inchesTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.inchesTextbox.Location = new System.Drawing.Point(242, 81);
+            this.inchesTextbox.Margin = new System.Windows.Forms.Padding(1);
+            this.inchesTextbox.Name = "inchesTextbox";
+            this.inchesTextbox.Size = new System.Drawing.Size(66, 26);
+            this.inchesTextbox.TabIndex = 10;
             // 
-            // label8
+            // feetLabel
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(515, 206);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(31, 32);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "ft";
+            this.feetLabel.AutoSize = true;
+            this.feetLabel.Location = new System.Drawing.Point(198, 89);
+            this.feetLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.feetLabel.Name = "feetLabel";
+            this.feetLabel.Size = new System.Drawing.Size(13, 13);
+            this.feetLabel.TabIndex = 11;
+            this.feetLabel.Text = "ft";
             // 
-            // label9
+            // inchesLabel
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(821, 206);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(38, 32);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "in";
+            this.inchesLabel.AutoSize = true;
+            this.inchesLabel.Location = new System.Drawing.Point(312, 88);
+            this.inchesLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.inchesLabel.Name = "inchesLabel";
+            this.inchesLabel.Size = new System.Drawing.Size(15, 13);
+            this.inchesLabel.TabIndex = 12;
+            this.inchesLabel.Text = "in";
             // 
             // NameTextbox
             // 
             this.NameTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.NameTextbox.Location = new System.Drawing.Point(340, 115);
+            this.NameTextbox.Location = new System.Drawing.Point(128, 48);
+            this.NameTextbox.Margin = new System.Windows.Forms.Padding(1);
             this.NameTextbox.Name = "NameTextbox";
-            this.NameTextbox.Size = new System.Drawing.Size(557, 53);
+            this.NameTextbox.Size = new System.Drawing.Size(211, 26);
             this.NameTextbox.TabIndex = 13;
             // 
-            // label11
+            // heightLabel
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(196, 209);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(81, 32);
-            this.label11.TabIndex = 14;
-            this.label11.Text = "(feet)";
+            this.heightLabel.AutoSize = true;
+            this.heightLabel.Location = new System.Drawing.Point(74, 88);
+            this.heightLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.heightLabel.Name = "heightLabel";
+            this.heightLabel.Size = new System.Drawing.Size(31, 13);
+            this.heightLabel.TabIndex = 14;
+            this.heightLabel.Text = "(feet)";
             // 
-            // label12
+            // weightLabel
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(205, 293);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(70, 32);
-            this.label12.TabIndex = 15;
-            this.label12.Text = "(lbs)";
+            this.weightLabel.AutoSize = true;
+            this.weightLabel.Location = new System.Drawing.Point(77, 123);
+            this.weightLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.weightLabel.Name = "weightLabel";
+            this.weightLabel.Size = new System.Drawing.Size(26, 13);
+            this.weightLabel.TabIndex = 15;
+            this.weightLabel.Text = "(lbs)";
+            // 
+            // infoLabel
+            // 
+            this.infoLabel.AutoSize = true;
+            this.infoLabel.Cursor = System.Windows.Forms.Cursors.Default;
+            this.infoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.infoLabel.ForeColor = System.Drawing.Color.Red;
+            this.infoLabel.Location = new System.Drawing.Point(21, 161);
+            this.infoLabel.Name = "infoLabel";
+            this.infoLabel.Size = new System.Drawing.Size(343, 20);
+            this.infoLabel.TabIndex = 16;
+            this.infoLabel.Text = "You must enter a height and weight to continue";
+            this.infoLabel.Visible = false;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1858, 1272);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
+            this.ClientSize = new System.Drawing.Size(697, 542);
+            this.Controls.Add(this.infoLabel);
+            this.Controls.Add(this.weightLabel);
+            this.Controls.Add(this.heightLabel);
             this.Controls.Add(this.NameTextbox);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.inchesLabel);
+            this.Controls.Add(this.feetLabel);
+            this.Controls.Add(this.inchesTextbox);
+            this.Controls.Add(this.weightTextbox);
+            this.Controls.Add(this.heightTextbox);
             this.Controls.Add(this.ResultsGroup);
             this.Controls.Add(this.CalculateButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.name);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "MainForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -319,10 +362,6 @@
             this.PerformLayout();
 
         }
-        private void InitializeGUI()
-        {
-
-        }
 
         #endregion
 
@@ -330,24 +369,25 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button CalculateButton;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton metricRadioButton;
+        private System.Windows.Forms.RadioButton americanRadioButton;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox ResultsGroup;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label bmiResultsLabel;
+        private System.Windows.Forms.Label weightCategoryResultsLabel;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox heightTextbox;
+        private System.Windows.Forms.TextBox weightTextbox;
+        private System.Windows.Forms.TextBox inchesTextbox;
+        private System.Windows.Forms.Label feetLabel;
+        private System.Windows.Forms.Label inchesLabel;
         private System.Windows.Forms.TextBox NameTextbox;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label normalWeightLabel;
+        private System.Windows.Forms.Label heightLabel;
+        private System.Windows.Forms.Label weightLabel;
+        private System.Windows.Forms.Label infoLabel;
     }
 }
 

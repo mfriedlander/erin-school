@@ -7,3 +7,12 @@ C:\Users\mattf\Source\Repos\erin-school\Assignment4\obj\Debug\Assignment4.Proper
 C:\Users\mattf\Source\Repos\erin-school\Assignment4\obj\Debug\Assignment4.csproj.GenerateResource.Cache
 C:\Users\mattf\Source\Repos\erin-school\Assignment4\obj\Debug\Assignment4.exe
 C:\Users\mattf\Source\Repos\erin-school\Assignment4\obj\Debug\Assignment4.pdb
+C:\Users\erinm\Source\Repos\erin-school\Assignment4\bin\Debug\Assignment4.exe.config
+C:\Users\erinm\Source\Repos\erin-school\Assignment4\obj\Debug\Assignment4.exe
+C:\Users\erinm\Source\Repos\erin-school\Assignment4\obj\Debug\Assignment4.pdb
+C:\Users\erinm\Source\Repos\erin-school\Assignment4\obj\Debug\Assignment4.csprojResolveAssemblyReference.cache
+C:\Users\erinm\Source\Repos\erin-school\Assignment4\obj\Debug\Assignment4.MainForm.resources
+C:\Users\erinm\Source\Repos\erin-school\Assignment4\obj\Debug\Assignment4.Properties.Resources.resources
+C:\Users\erinm\Source\Repos\erin-school\Assignment4\obj\Debug\Assignment4.csproj.GenerateResource.Cache
+C:\Users\erinm\Source\Repos\erin-school\Assignment4\bin\Debug\Assignment4.exe
+C:\Users\erinm\Source\Repos\erin-school\Assignment4\bin\Debug\Assignment4.pdb
