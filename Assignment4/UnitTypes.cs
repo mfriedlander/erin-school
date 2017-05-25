@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Assignment4
 {
+    /// <summary>
+    /// Enumeration of unit types
+    /// </summary>
     public enum UnitTypes
     {
         Metric,

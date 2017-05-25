@@ -171,7 +171,7 @@
             this.normalWeightLabel.AutoSize = true;
             this.normalWeightLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.normalWeightLabel.ForeColor = System.Drawing.Color.DarkGreen;
-            this.normalWeightLabel.Location = new System.Drawing.Point(92, 194);
+            this.normalWeightLabel.Location = new System.Drawing.Point(61, 176);
             this.normalWeightLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.normalWeightLabel.Name = "normalWeightLabel";
             this.normalWeightLabel.Size = new System.Drawing.Size(419, 17);
@@ -334,7 +334,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(697, 542);
+            this.ClientSize = new System.Drawing.Size(620, 542);
             this.Controls.Add(this.infoLabel);
             this.Controls.Add(this.weightLabel);
             this.Controls.Add(this.heightLabel);
