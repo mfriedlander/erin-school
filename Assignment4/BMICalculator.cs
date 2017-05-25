@@ -15,6 +15,8 @@ namespace Assignment4
         private double height = 0;
         private double weight = 0;
         private UnitTypes unit;
+        private const double lowBmi = 18.5;
+        private const double highBmi = 24.9;
 
         /// <summary>
         /// Gets/Sets Name
@@ -136,8 +138,6 @@ namespace Assignment4
         /// <returns></returns>
         public string NormalWeight()
         {
-            double lowBmi = 18.5;
-            double highBmi = 24.9;
             double lowerWeight = 0;
             double upperWeight = 0;
             string unit = "";

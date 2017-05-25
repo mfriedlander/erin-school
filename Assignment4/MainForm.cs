@@ -146,6 +146,9 @@ namespace Assignment4
         /// <param name="e"></param>
         private void metricRadioButton_CheckedChanged(object sender, EventArgs e)
         {
+            heightTextbox.Text = "";
+            inchesTextbox.Text = "";
+            weightTextbox.Text = "";
             inchesTextbox.Visible = false;
             inchesLabel.Visible = false;
             feetLabel.Text = "cm";
@@ -160,6 +163,8 @@ namespace Assignment4
         /// <param name="e"></param>
         private void americanRadioButton_CheckedChanged(object sender, EventArgs e)
         {
+            heightTextbox.Text = "";
+            weightTextbox.Text = "";
             inchesTextbox.Visible = true;
             inchesLabel.Visible = true;
             feetLabel.Text = "ft";
