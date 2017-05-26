@@ -15,6 +15,9 @@ namespace Assignment4
     /// </summary>
     public partial class MainForm : Form
     {
+        /// <summary>
+        /// MainForm constructor that runs when GUI is created
+        /// </summary>
         public MainForm()
         {
             InitializeComponent();
@@ -24,15 +27,13 @@ namespace Assignment4
             BMICalculator bmiCalculator = new BMICalculator();
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Initializes the GUI
+        /// </summary>
         private void InitializeGUI()
         {
             // Tile of form window
-            this.Text = "Body Mass Calculator";
+            this.Text = "Body Mass Index Calculator";
         }
 
         /// <summary>
@@ -42,9 +43,15 @@ namespace Assignment4
         /// <param name="e"></param>
         private void CalculateButton_Click(object sender, EventArgs e)
         {
+            double height;
+            double weight;
+            double hght;
             infoLabel.Visible = false;
+            
+            if (heightTextbox.Text != "" && weightTextbox.Text != "" && 
+                Double.TryParse(heightTextbox.Text, out height) && Double.TryParse(weightTextbox.Text, out weight)
+                && Double.TryParse(heightTxtbx.Text, out hght)) {
 
-            if (heightTextbox.Text != "" && weightTextbox.Text != "") {
                 DisplayResults();
 
                 bmiCalculator.Unit = ReadMeasurementType();
@@ -63,6 +70,7 @@ namespace Assignment4
             {
                 // Tells user they must enter at least their weight / height
                 infoLabel.Visible = true;
+                ResultsGroup.Visible = false;
             }
         }
 
@@ -90,22 +98,24 @@ namespace Assignment4
         {
             double height;
             double inches;
+            double centimeters;
             string heightInput = heightTextbox.Text;
-            string inchesInput = inchesTextbox.Text;
+            string heightInpt = heightTxtbx.Text;
 
             Double.TryParse(heightInput, out height);
 
             if (americanRadioButton.Checked)
             {
-                Double.TryParse(inchesInput, out inches);
+                Double.TryParse(heightInpt, out inches);
 
                 // get total in in" from ft'in"
                 height = (height * 12) + inches;
             }
             else
             {
-                // get total in m from cm
-                height = (height * 0.01);
+                Double.TryParse(heightInpt, out centimeters);
+                // get total in m from m & cm
+                height = height + (centimeters * 0.01);
             }
 
             return height;
@@ -147,13 +157,13 @@ namespace Assignment4
         private void metricRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             heightTextbox.Text = "";
-            inchesTextbox.Text = "";
+            heightTxtbx.Text = "";
             weightTextbox.Text = "";
-            inchesTextbox.Visible = false;
-            inchesLabel.Visible = false;
-            feetLabel.Text = "cm";
-            heightLabel.Text = "cm";
-            weightLabel.Text = "kg";
+            heightLbl.Text = "cm";
+            feetLabel.Text = "m";
+            heightLabel.Text = "( m,cm )";
+            weightLabel.Text = "( kg )";
+            weightLbl.Text = "kg";
         }
 
         /// <summary>
@@ -165,11 +175,12 @@ namespace Assignment4
         {
             heightTextbox.Text = "";
             weightTextbox.Text = "";
-            inchesTextbox.Visible = true;
-            inchesLabel.Visible = true;
+            heightTxtbx.Text = "";
+            heightLbl.Text = "in";
             feetLabel.Text = "ft";
-            heightLabel.Text = "feet";
-            weightLabel.Text = "lbs";
+            heightLabel.Text = "( ft,in )";
+            weightLabel.Text = "( lbs )";
+            weightLbl.Text = "lbs";
         }
 
         /// <summary>
