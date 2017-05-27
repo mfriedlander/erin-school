@@ -6,7 +6,6 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-        private BMICalculator bmiCalculator = new BMICalculator();
 
         /// <summary>
         /// Clean up any resources being used.
@@ -45,7 +44,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.heightTextbox = new System.Windows.Forms.TextBox();
             this.weightTextbox = new System.Windows.Forms.TextBox();
-            this.heightTxtbx = new System.Windows.Forms.TextBox();
+            this.secondaryHeightTextbox = new System.Windows.Forms.TextBox();
             this.feetLabel = new System.Windows.Forms.Label();
             this.heightLbl = new System.Windows.Forms.Label();
             this.NameTextbox = new System.Windows.Forms.TextBox();
@@ -251,14 +250,14 @@
             this.weightTextbox.Size = new System.Drawing.Size(169, 53);
             this.weightTextbox.TabIndex = 9;
             // 
-            // heightTxtbx
+            // secondaryHeightTextbox
             // 
-            this.heightTxtbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.heightTxtbx.Location = new System.Drawing.Point(645, 193);
-            this.heightTxtbx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.heightTxtbx.Name = "heightTxtbx";
-            this.heightTxtbx.Size = new System.Drawing.Size(169, 53);
-            this.heightTxtbx.TabIndex = 10;
+            this.secondaryHeightTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.secondaryHeightTextbox.Location = new System.Drawing.Point(643, 197);
+            this.secondaryHeightTextbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.secondaryHeightTextbox.Name = "secondaryHeightTextbox";
+            this.secondaryHeightTextbox.Size = new System.Drawing.Size(169, 53);
+            this.secondaryHeightTextbox.TabIndex = 10;
             // 
             // feetLabel
             // 
@@ -314,9 +313,9 @@
             this.infoLabel.Location = new System.Drawing.Point(56, 384);
             this.infoLabel.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.infoLabel.Name = "infoLabel";
-            this.infoLabel.Size = new System.Drawing.Size(944, 46);
+            this.infoLabel.Size = new System.Drawing.Size(1381, 46);
             this.infoLabel.TabIndex = 16;
-            this.infoLabel.Text = "You must enter a valid height and weight to continue";
+            this.infoLabel.Text = "You must enter a non-zero, positive number for height and weight to continue";
             this.infoLabel.Visible = false;
             // 
             // weightLbl
@@ -340,7 +339,7 @@
             this.Controls.Add(this.NameTextbox);
             this.Controls.Add(this.heightLbl);
             this.Controls.Add(this.feetLabel);
-            this.Controls.Add(this.heightTxtbx);
+            this.Controls.Add(this.secondaryHeightTextbox);
             this.Controls.Add(this.weightTextbox);
             this.Controls.Add(this.heightTextbox);
             this.Controls.Add(this.ResultsGroup);
@@ -378,7 +377,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox heightTextbox;
         private System.Windows.Forms.TextBox weightTextbox;
-        private System.Windows.Forms.TextBox heightTxtbx;
+        private System.Windows.Forms.TextBox secondaryHeightTextbox;
         private System.Windows.Forms.Label feetLabel;
         private System.Windows.Forms.Label heightLbl;
         private System.Windows.Forms.TextBox NameTextbox;

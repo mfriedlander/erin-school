@@ -15,6 +15,8 @@ namespace Assignment4
     /// </summary>
     public partial class MainForm : Form
     {
+        private BMICalculator bmiCalculator;
+
         /// <summary>
         /// MainForm constructor that runs when GUI is created
         /// </summary>
@@ -24,7 +26,7 @@ namespace Assignment4
             InitializeGUI();
 
             // Creates new instance of bmi calculator
-            BMICalculator bmiCalculator = new BMICalculator();
+            bmiCalculator = new BMICalculator();
         }
 
         /// <summary>
@@ -43,20 +45,16 @@ namespace Assignment4
         /// <param name="e"></param>
         private void CalculateButton_Click(object sender, EventArgs e)
         {
-            double height;
-            double weight;
-            double hght;
             infoLabel.Visible = false;
-            
-            if (heightTextbox.Text != "" && weightTextbox.Text != "" && 
-                Double.TryParse(heightTextbox.Text, out height) && Double.TryParse(weightTextbox.Text, out weight)
-                && Double.TryParse(heightTxtbx.Text, out hght)) {
 
+            ReadMeasurementType();
+            bool validWeight = ReadWeightInput();
+            bool validHeight = ReadHeightInput();
+
+            // Ensure valid input
+            if (validWeight && validHeight)
+            {
                 DisplayResults();
-
-                bmiCalculator.Unit = ReadMeasurementType();
-                bmiCalculator.Weight = ReadWeightInput();
-                bmiCalculator.Height = ReadHeightInput();
 
                 // Displays bmi results to user
                 bmiResultsLabel.Text = bmiCalculator.CalculateBMI().ToString("f2");
@@ -78,61 +76,76 @@ namespace Assignment4
         /// Reads which measurement type is selected
         /// </summary>
         /// <returns></returns>
-        private UnitTypes ReadMeasurementType()
+        private void ReadMeasurementType()
         {
             if (americanRadioButton.Checked)
             {
-                return UnitTypes.American;
+                bmiCalculator.Unit = UnitTypes.American;
             }
             else
             {
-                return UnitTypes.Metric;
+                bmiCalculator.Unit = UnitTypes.Metric;
             }
         }
 
         /// <summary>
         /// Reads height from user
         /// </summary>
-        /// <returns></returns>
-        private double ReadHeightInput()
+        /// <returns>True if textbox values can be parsed.</returns>
+        private bool ReadHeightInput()
         {
-            double height;
-            double inches;
-            double centimeters;
-            string heightInput = heightTextbox.Text;
-            string heightInpt = heightTxtbx.Text;
+            double primary = 0;
+            double secondary = 0;
+            string primaryHeight = ValidateNumericTextbox(heightTextbox);
+            string secondaryHeight = ValidateNumericTextbox(secondaryHeightTextbox);
 
-            Double.TryParse(heightInput, out height);
-
-            if (americanRadioButton.Checked)
+            if (!Double.TryParse(primaryHeight, out primary) || !Double.TryParse(secondaryHeight, out secondary))
             {
-                Double.TryParse(heightInpt, out inches);
-
-                // get total in in" from ft'in"
-                height = (height * 12) + inches;
+                return false;
             }
             else
             {
-                Double.TryParse(heightInpt, out centimeters);
-                // get total in m from m & cm
-                height = height + (centimeters * 0.01);
-            }
+                if (americanRadioButton.Checked)
+                {
+                    // get total in in" from ft'in"
+                    bmiCalculator.Height = (primary * 12) + secondary;
+                }
+                else
+                {
+                    // get total in m from m & cm
+                    bmiCalculator.Height = primary + (secondary * 0.01);
+                } 
 
-            return height;
+                // Ensure that height is a non-zero positive value
+                if (bmiCalculator.Height > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
         }
 
         /// <summary>
         /// Read weight from user
         /// </summary>
         /// <returns></returns>
-        private double ReadWeightInput()
+        private bool ReadWeightInput()
         {
             double weight;
-            string input = weightTextbox.Text;
+            string input = ValidateNumericTextbox(weightTextbox);
 
-           Double.TryParse(input, out weight);
-
-            return weight;
+            if (!Double.TryParse(input, out weight) || weight <= 0)
+            {
+                return false;
+            }
+            else
+            {
+                bmiCalculator.Weight = weight;
+                return true;
+            }
         }
 
         /// <summary>
@@ -157,7 +170,7 @@ namespace Assignment4
         private void metricRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             heightTextbox.Text = "";
-            heightTxtbx.Text = "";
+            secondaryHeightTextbox.Text = "";
             weightTextbox.Text = "";
             heightLbl.Text = "cm";
             feetLabel.Text = "m";
@@ -175,7 +188,7 @@ namespace Assignment4
         {
             heightTextbox.Text = "";
             weightTextbox.Text = "";
-            heightTxtbx.Text = "";
+            secondaryHeightTextbox.Text = "";
             heightLbl.Text = "in";
             feetLabel.Text = "ft";
             heightLabel.Text = "( ft,in )";
@@ -197,6 +210,21 @@ namespace Assignment4
             {
                 normalWeightLabel.Text = "Your weight is within the normal range for your height.";
             }
+        }
+
+        /// <summary>
+        /// Replaces any whitespace in the textboxes with a default value.
+        /// </summary>
+        /// <param name="textbox"></param>
+        /// <returns></returns>
+        private string ValidateNumericTextbox(TextBox textbox)
+        {
+            if (string.IsNullOrWhiteSpace(textbox.Text))
+            {
+                textbox.Text = "0";
+            }
+
+            return textbox.Text;
         }
     }
 }
