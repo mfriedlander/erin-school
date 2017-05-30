@@ -1,0 +1,9 @@
+C:\Users\mattf\Source\Repos\erin-school\Assignment5\bin\Debug\Assignment5.exe.config
+C:\Users\mattf\Source\Repos\erin-school\Assignment5\bin\Debug\Assignment5.exe
+C:\Users\mattf\Source\Repos\erin-school\Assignment5\bin\Debug\Assignment5.pdb
+C:\Users\mattf\Source\Repos\erin-school\Assignment5\obj\Debug\Assignment5.csprojResolveAssemblyReference.cache
+C:\Users\mattf\Source\Repos\erin-school\Assignment5\obj\Debug\Assignment5.Properties.Resources.resources
+C:\Users\mattf\Source\Repos\erin-school\Assignment5\obj\Debug\Assignment5.csproj.GenerateResource.Cache
+C:\Users\mattf\Source\Repos\erin-school\Assignment5\obj\Debug\Assignment5.exe
+C:\Users\mattf\Source\Repos\erin-school\Assignment5\obj\Debug\Assignment5.pdb
+C:\Users\mattf\Source\Repos\erin-school\Assignment5\obj\Debug\Assignment5.MainForm.resources
