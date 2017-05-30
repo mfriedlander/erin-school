@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.inputGroupBox = new System.Windows.Forms.GroupBox();
-            this.descriptionLabel = new System.Windows.Forms.Label();
-            this.descriptionTextBox = new System.Windows.Forms.TextBox();
-            this.amountTextBox = new System.Windows.Forms.TextBox();
+            this.amountDropDownList = new System.Windows.Forms.ComboBox();
             this.amountLabel = new System.Windows.Forms.Label();
-            this.amountComboBox = new System.Windows.Forms.ComboBox();
-            this.addButton = new System.Windows.Forms.Button();
-            this.editButton = new System.Windows.Forms.Button();
-            this.deleteButton = new System.Windows.Forms.Button();
-            this.shoppingListBox = new System.Windows.Forms.ListBox();
+            this.amountTextBox = new System.Windows.Forms.TextBox();
+            this.descriptionTextBox = new System.Windows.Forms.TextBox();
+            this.descriptionLabel = new System.Windows.Forms.Label();
+            this.AddButton = new System.Windows.Forms.Button();
+            this.EditButton = new System.Windows.Forms.Button();
+            this.DeleteButton = new System.Windows.Forms.Button();
+            this.ShoppingListBox = new System.Windows.Forms.ListBox();
             this.shoppingListLabel = new System.Windows.Forms.Label();
             this.inputGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // inputGroupBox
             // 
-            this.inputGroupBox.Controls.Add(this.amountComboBox);
+            this.inputGroupBox.Controls.Add(this.amountDropDownList);
             this.inputGroupBox.Controls.Add(this.amountLabel);
             this.inputGroupBox.Controls.Add(this.amountTextBox);
             this.inputGroupBox.Controls.Add(this.descriptionTextBox);
@@ -52,50 +52,16 @@
             this.inputGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.inputGroupBox.Location = new System.Drawing.Point(45, 83);
             this.inputGroupBox.Name = "inputGroupBox";
-            this.inputGroupBox.Size = new System.Drawing.Size(1178, 333);
+            this.inputGroupBox.Size = new System.Drawing.Size(1120, 333);
             this.inputGroupBox.TabIndex = 0;
             this.inputGroupBox.TabStop = false;
             this.inputGroupBox.Text = "Input";
             // 
-            // descriptionLabel
+            // amountDropDownList
             // 
-            this.descriptionLabel.AutoSize = true;
-            this.descriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.descriptionLabel.Location = new System.Drawing.Point(75, 91);
-            this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(188, 39);
-            this.descriptionLabel.TabIndex = 1;
-            this.descriptionLabel.Text = "Description";
-            // 
-            // descriptionTextBox
-            // 
-            this.descriptionTextBox.Location = new System.Drawing.Point(293, 85);
-            this.descriptionTextBox.Name = "descriptionTextBox";
-            this.descriptionTextBox.Size = new System.Drawing.Size(768, 53);
-            this.descriptionTextBox.TabIndex = 2;
-            // 
-            // amountTextBox
-            // 
-            this.amountTextBox.Location = new System.Drawing.Point(293, 181);
-            this.amountTextBox.Name = "amountTextBox";
-            this.amountTextBox.Size = new System.Drawing.Size(372, 53);
-            this.amountTextBox.TabIndex = 3;
-            // 
-            // amountLabel
-            // 
-            this.amountLabel.AutoSize = true;
-            this.amountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.amountLabel.Location = new System.Drawing.Point(75, 190);
-            this.amountLabel.Name = "amountLabel";
-            this.amountLabel.Size = new System.Drawing.Size(134, 39);
-            this.amountLabel.TabIndex = 4;
-            this.amountLabel.Text = "Amount";
-            // 
-            // amountComboBox
-            // 
-            this.amountComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.amountComboBox.FormattingEnabled = true;
-            this.amountComboBox.Items.AddRange(new object[] {
+            this.amountDropDownList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.amountDropDownList.FormattingEnabled = true;
+            this.amountDropDownList.Items.AddRange(new object[] {
             "cm",
             "ft",
             "g",
@@ -107,57 +73,93 @@
             "m",
             "oz",
             "piece"});
-            this.amountComboBox.Location = new System.Drawing.Point(718, 180);
-            this.amountComboBox.Name = "amountComboBox";
-            this.amountComboBox.Size = new System.Drawing.Size(344, 54);
-            this.amountComboBox.TabIndex = 5;
+            this.amountDropDownList.Location = new System.Drawing.Point(718, 180);
+            this.amountDropDownList.Name = "amountDropDownList";
+            this.amountDropDownList.Size = new System.Drawing.Size(344, 54);
+            this.amountDropDownList.TabIndex = 5;
             // 
-            // addButton
+            // amountLabel
             // 
-            this.addButton.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.addButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.addButton.Location = new System.Drawing.Point(1255, 149);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(294, 136);
-            this.addButton.TabIndex = 1;
-            this.addButton.Text = "Add";
-            this.addButton.UseVisualStyleBackColor = false;
-            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            this.amountLabel.AutoSize = true;
+            this.amountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.amountLabel.Location = new System.Drawing.Point(75, 190);
+            this.amountLabel.Name = "amountLabel";
+            this.amountLabel.Size = new System.Drawing.Size(134, 39);
+            this.amountLabel.TabIndex = 4;
+            this.amountLabel.Text = "Amount";
             // 
-            // editButton
+            // amountTextBox
             // 
-            this.editButton.BackColor = System.Drawing.Color.Teal;
-            this.editButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.editButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.editButton.Location = new System.Drawing.Point(1255, 312);
-            this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(145, 75);
-            this.editButton.TabIndex = 2;
-            this.editButton.Text = "Edit";
-            this.editButton.UseVisualStyleBackColor = false;
+            this.amountTextBox.Location = new System.Drawing.Point(293, 181);
+            this.amountTextBox.Name = "amountTextBox";
+            this.amountTextBox.Size = new System.Drawing.Size(372, 53);
+            this.amountTextBox.TabIndex = 3;
             // 
-            // deleteButton
+            // descriptionTextBox
             // 
-            this.deleteButton.BackColor = System.Drawing.Color.Firebrick;
-            this.deleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.deleteButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.deleteButton.Location = new System.Drawing.Point(1406, 312);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(145, 75);
-            this.deleteButton.TabIndex = 3;
-            this.deleteButton.Text = "Delete";
-            this.deleteButton.UseVisualStyleBackColor = false;
+            this.descriptionTextBox.Location = new System.Drawing.Point(293, 85);
+            this.descriptionTextBox.Name = "descriptionTextBox";
+            this.descriptionTextBox.Size = new System.Drawing.Size(768, 53);
+            this.descriptionTextBox.TabIndex = 2;
             // 
-            // shoppingListBox
+            // descriptionLabel
             // 
-            this.shoppingListBox.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.shoppingListBox.FormattingEnabled = true;
-            this.shoppingListBox.ItemHeight = 42;
-            this.shoppingListBox.Location = new System.Drawing.Point(62, 556);
-            this.shoppingListBox.Name = "shoppingListBox";
-            this.shoppingListBox.Size = new System.Drawing.Size(1472, 760);
-            this.shoppingListBox.TabIndex = 5;
+            this.descriptionLabel.AutoSize = true;
+            this.descriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.descriptionLabel.Location = new System.Drawing.Point(75, 91);
+            this.descriptionLabel.Name = "descriptionLabel";
+            this.descriptionLabel.Size = new System.Drawing.Size(188, 39);
+            this.descriptionLabel.TabIndex = 1;
+            this.descriptionLabel.Text = "Description";
+            // 
+            // AddButton
+            // 
+            this.AddButton.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.AddButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.AddButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.AddButton.Location = new System.Drawing.Point(1205, 149);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(344, 136);
+            this.AddButton.TabIndex = 1;
+            this.AddButton.Text = "Add";
+            this.AddButton.UseVisualStyleBackColor = false;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
+            // 
+            // EditButton
+            // 
+            this.EditButton.BackColor = System.Drawing.Color.Teal;
+            this.EditButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.EditButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.EditButton.Location = new System.Drawing.Point(1205, 312);
+            this.EditButton.Name = "EditButton";
+            this.EditButton.Size = new System.Drawing.Size(160, 75);
+            this.EditButton.TabIndex = 2;
+            this.EditButton.Text = "Edit";
+            this.EditButton.UseVisualStyleBackColor = false;
+            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
+            // 
+            // DeleteButton
+            // 
+            this.DeleteButton.BackColor = System.Drawing.Color.Firebrick;
+            this.DeleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.DeleteButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.DeleteButton.Location = new System.Drawing.Point(1388, 312);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(163, 75);
+            this.DeleteButton.TabIndex = 3;
+            this.DeleteButton.Text = "Delete";
+            this.DeleteButton.UseVisualStyleBackColor = false;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
+            // 
+            // ShoppingListBox
+            // 
+            this.ShoppingListBox.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ShoppingListBox.FormattingEnabled = true;
+            this.ShoppingListBox.ItemHeight = 42;
+            this.ShoppingListBox.Location = new System.Drawing.Point(62, 556);
+            this.ShoppingListBox.Name = "ShoppingListBox";
+            this.ShoppingListBox.Size = new System.Drawing.Size(1472, 760);
+            this.ShoppingListBox.TabIndex = 5;
             // 
             // shoppingListLabel
             // 
@@ -176,10 +178,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1616, 1404);
             this.Controls.Add(this.shoppingListLabel);
-            this.Controls.Add(this.shoppingListBox);
-            this.Controls.Add(this.deleteButton);
-            this.Controls.Add(this.editButton);
-            this.Controls.Add(this.addButton);
+            this.Controls.Add(this.ShoppingListBox);
+            this.Controls.Add(this.DeleteButton);
+            this.Controls.Add(this.EditButton);
+            this.Controls.Add(this.AddButton);
             this.Controls.Add(this.inputGroupBox);
             this.Name = "MainForm";
             this.Text = "Form1";
@@ -193,15 +195,15 @@
         #endregion
 
         private System.Windows.Forms.GroupBox inputGroupBox;
-        private System.Windows.Forms.ComboBox amountComboBox;
+        private System.Windows.Forms.ComboBox amountDropDownList;
         private System.Windows.Forms.Label amountLabel;
         private System.Windows.Forms.TextBox amountTextBox;
         private System.Windows.Forms.TextBox descriptionTextBox;
         private System.Windows.Forms.Label descriptionLabel;
-        private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.Button editButton;
-        private System.Windows.Forms.Button deleteButton;
-        private System.Windows.Forms.ListBox shoppingListBox;
+        private System.Windows.Forms.Button AddButton;
+        private System.Windows.Forms.Button EditButton;
+        private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.ListBox ShoppingListBox;
         private System.Windows.Forms.Label shoppingListLabel;
     }
 }
