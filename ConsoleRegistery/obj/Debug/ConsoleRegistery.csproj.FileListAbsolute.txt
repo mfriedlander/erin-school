@@ -1,0 +1,2 @@
+C:\UCSD\ConsoleRegistery\ConsoleRegistery\bin\Debug\ConsoleRegistery.exe.config
+C:\Users\erinm\Source\Repos\erin-school\ConsoleRegistery\bin\Debug\ConsoleRegistery.exe.config
